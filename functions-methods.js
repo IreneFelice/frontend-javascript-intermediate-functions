@@ -39,7 +39,19 @@ console.log(domein);
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+// ANTWOORD Opdracht 2
+function typeOfEmail (email){
+    if (email.includes("@novi.nl")){
+    return "Medewerker"}
+    else if (email.includes("@novi-education.nl")){
+    return "Student" }
+    else if (email.includes("@")){
+        return "Extern"}
+    else {return ""}
+}
 
+const emailType = typeOfEmail(email);
+console.log(emailType);
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
