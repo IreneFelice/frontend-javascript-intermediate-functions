@@ -11,7 +11,7 @@
 
 // ANTWOORD Opdracht 1
 
-// email= "n.eeken@novi-education.nl";
+email= "n.eeken@novi-education.nl";
 // email= "t.mellink@novi.nl";
 // email= "a.wiersma@outlook.com";
 // email= "n.eeken6novi-education.nl";
@@ -65,3 +65,26 @@ console.log(emailType);
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+//
+
+// ANTWOORD Opdrach3
+
+function checkEmailValidity(email){
+
+if (email.includes(",") || email.includes("*") || email.includes(`'`) || email.length-1 === email.lastIndexOf("."))
+{
+    return "false"
+}
+else if (email.includes("@") && (email.includes(".nl") || email.includes(".eu") || email.includes(".com")) ){
+    return "True"
+}
+        else { return "false"}
+
+}
+
+check = checkEmailValidity(email);
+console.log(check);
+
+
+
