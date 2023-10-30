@@ -2,7 +2,7 @@
 // maar ook een manier moeten vinden om hetgeen dat je verzamelt ergens te bundelen. Op deze manier zul je ontdekken hoe je omgaat met scope. Pak vooral het hoofdstuk op EdHub over for-loops er nog eens bij!
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
 
-// const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 
 
@@ -44,29 +44,21 @@
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
 // ANTWOORD OPDR 1b
-// let countCumLaude = 0;
-// grades.forEach(function(grades) {
-//     if (grades > 7) {
-//         countCumLaude += 1;
-//     }
-// })
-//     console.log(countCumLaude);
-// ?????????????????
-//
-// function cumLaude(grades) {
-//     let countCumLaude = 0;
-//     for (let i = 0; i < 20; i++) {
-//         if (grades[i] >= 8) {
-//             countCumLaude += 1;
-//             return countCumLaude
-//         }
-//
-//     }
-// }
-// ?????
 
+function cumLaude(grades) {
 
+    let countCumLaude = 0;
 
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] >= 8) {
+            countCumLaude += 1;
+        }
+    }
+    return countCumLaude
+}
+
+cumLaudeCounting = cumLaude([9, 6, 8]);
+console.log(cumLaudeCounting);
 
 
 
@@ -83,8 +75,7 @@
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
-// *gemiddelde krijg je door alles bij elkaar op te tellen en te delen door het aantal inputs
-// *dus ik heb nodig de length van een array en de som
+//ANTWOORD Opdracht 2
 
 // let som = 0;
 //
@@ -105,6 +96,8 @@
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+// ANTWOORD Opdracht 2b
+
 function averageGrade(grades) {
     let som = 0;
 
@@ -115,11 +108,11 @@ function averageGrade(grades) {
     return som / grades.length;
 }
 
-const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+// const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 const grades1 = [6, 4, 5];
 const grades2 = [8, 9, 4, 6, 10];
 
-const average = averageGrade(grades);
+const average = averageGrade(grades).toFixed(2); //ANTWOORD 2c
 const average1 = averageGrade(grades1);
 const average2 = averageGrade(grades2);
 
@@ -147,6 +140,22 @@ console.log(average2);
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 9
+//
+
+
+// ANTWOORD Bonusopdracht
+// let highestFoundGrade = 0;
+//
+//
+// for (i=0; i<grades.length; i++){
+//     if (grades[i]>highestFoundGrade){
+//         highestFoundGrade = grades[i]
+//     }
+// }
+
+// console.log(highestFoundGrade);
+
+
 
 
 /* 3b: Omschrijven tot een herbruikbare functie */
@@ -158,3 +167,22 @@ console.log(average2);
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+// ANTWOORD Opdracht 3b
+
+function compareForHighestGrade(grades) {
+
+
+    let highestFoundGrade = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] > highestFoundGrade) {
+            highestFoundGrade = grades[i]
+        }
+    }
+    return highestFoundGrade
+}
+
+highestGrade = compareForHighestGrade(grades);
+// highestGrade = compareForHighestGrade([2, 5, 3]);
+console.log(highestGrade);
