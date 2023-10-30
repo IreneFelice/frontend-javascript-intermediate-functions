@@ -9,8 +9,27 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+// ANTWOORD Opdracht 1
 
-*test
+email= "n.eeken@novi-education.nl";
+// email= "t.mellink@novi.nl";
+// email= "a.wiersma@outlook.com";
+// email= "n.eeken6novi-education.nl";
+
+
+function getEmailDomain (email) {
+
+if (email.includes("@")){
+    myDomain= email.split("@");
+    return myDomain[1]}
+else {
+    return "ongeldige invoer";
+}
+}
+
+const domein = getEmailDomain(email)
+console.log(domein);
+
 
 /* Opdracht  2 */
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
@@ -20,7 +39,19 @@
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
+// ANTWOORD Opdracht 2
+function typeOfEmail (email){
+    if (email.includes("@novi.nl")){
+    return "Medewerker"}
+    else if (email.includes("@novi-education.nl")){
+    return "Student" }
+    else if (email.includes("@")){
+        return "Extern"}
+    else {return ""}
+}
 
+const emailType = typeOfEmail(email);
+console.log(emailType);
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
@@ -34,3 +65,26 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+//
+
+// ANTWOORD Opdrach3
+
+function checkEmailValidity(email){
+
+if (email.includes(",") || email.includes("*") || email.includes(`'`) || email.length-1 === email.lastIndexOf("."))
+{
+    return "false"
+}
+else if (email.includes("@") && (email.includes(".nl") || email.includes(".eu") || email.includes(".com")) ){
+    return "True"
+}
+        else { return "false"}
+
+}
+
+check = checkEmailValidity(email);
+console.log(check);
+
+
+
